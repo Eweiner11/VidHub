@@ -19,9 +19,6 @@ const App = (props) =>{
      
   function addToPlayer(link){
 
-    if(link.includes('twitch')){
-      link.replace("watch?v=", "v/")
-    }
     videoLinks.push(link)
 
     dispatch(setVideoPlayerLinks([...videoLinks]))
