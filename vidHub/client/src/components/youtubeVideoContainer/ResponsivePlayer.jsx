@@ -53,7 +53,8 @@ return (
         width="100%"
         height="100%"
         controls={true}
-        autoPlay={true}
+        playing={true}
+        muted={true}
       />
       {modal ? <FavoritesModal changeFavoriteNickname ={changeFavoriteNickname} link = {props.link} userName = {props.user}/>:null}
     </div>
