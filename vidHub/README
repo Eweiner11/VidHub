@@ -1,6 +1,6 @@
 -VIDHUB
 
--youtube video viewer
+-Youtube & Twitch Video Viewer
 -stack used: [React,Redux,Bootstrap,Google O-Auth,Redux,Node,Express,Mysql]
 
 
