@@ -9,7 +9,7 @@
 3. run 'npm install --save-dev webpack webpack-cli'
 4. navigate to the database.js under ./server/db_mysql; change user and password based on your mySQl userName and password
 5. create .env file
-5. sign up for Google Api key and save in .env file as process.env.API_KEY
+5. sign up for Google Api key and save in .env file as process.env.API_KEY. url:  https://developers.google.com/youtube/v3/getting-started
 5. run 'npm start'
 6. run 'npm run build'
 7. sign in and enjoy! My personal favorites are lofi-beats and rain sounds for a relaxing study combination
