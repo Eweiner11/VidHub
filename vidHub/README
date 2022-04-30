@@ -14,3 +14,53 @@
 6. run 'npm run build'
 7. sign in and enjoy! My personal favorites are lofi-beats and rain sounds for a relaxing study combination
 
+
+# ApexCare API
+
+The backend API for the Apexcare app.
+
+## Development Requirements
+
+- NodeJS 10.10+
+- Yarn (latest version)
+- Docker
+
+## Development Guide
+
+Start by installing node modules using **Yarn**.
+
+```
+$ yarn
+```
+
+Now start a Mongodb (v11.x.x) container:
+
+```
+$ docker-compose up --build -d
+```
+
+$ Seed database:
+
+```
+$ node seeding.js -i
+$ node relation.js -i
+```
+
+Now copy the environment configuration and add the missing values from [OnePassword](https://Apexcare.1password.com/)
+in the note called "API Environment Variables - Development".
+
+```
+$ cp .env.example .env
+```
+
+Open Mongo Compass
+- open create new connection
+- copy mongodb://pixarsart:qwerty@localhost:27017/apexCare?authSource=admin 
+  and paste into URI field
+-  
+
+You can start the server now:
+
+```
+$ yarn start
+```
