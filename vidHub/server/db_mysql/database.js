@@ -5,7 +5,7 @@ const { ModuleFilenameHelpers } = require("webpack");
 mysqlConfig = {
   host: "localhost",
   user: "root",
-  password: "password",
+  password: "Ccm0817565!",
 
 };
 

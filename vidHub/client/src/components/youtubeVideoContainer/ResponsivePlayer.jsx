@@ -33,8 +33,6 @@ return (
             onClick={() => {
             
               props.links.splice(props.index,1)
-            
-
              dispatch(setVideoPlayerLinks([...props.links]))
             }}
         >❌</div>

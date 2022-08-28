@@ -51,7 +51,7 @@ function YoutubeSearchContainer({ addToPlayer }) {
               id="youtube"
               variant="primary"
               size="sm"
-              onClick={() => changeActiveSearchApi("youtube")}
+              onClick={() => {}}
             >
               Youtube
             </Button>

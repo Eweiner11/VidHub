@@ -34,15 +34,15 @@ app.listen(port, (err) => {
 
 
 app.get("/favorites", (req, res) => {
-  getFavorites(req.query.userName, (results) => {
-    let savedLinks = [];
+  // getFavorites(req.query.userName, (results) => {
+  //   let savedLinks = [];
 
-    for (linkObj of results) {
-      savedLinks.push({ link: linkObj.link, name: linkObj.name });
-    }
+  //   for (linkObj of results) {
+  //     savedLinks.push({ link: linkObj.link, name: linkObj.name });
+  //   }
 
-    res.status(200).send(savedLinks);
-  });
+  //   res.status(200).send(savedLinks);
+  // });
 });
 
 app.get("/youtubeSearch", (req, res) => {

@@ -2,11 +2,10 @@ import React,{useState,useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios'
 import {setVideoPlayerLinks,setFavoritesList} from "./actions";
-import YoutubeSearchContainer from './components/youtubeSearch/YoutubeSearchContainer.jsx';
-import YoutubeVideoContainer from './components/youtubeVideoContainer/youtubeVideoContainer';
+import YoutubeSearchContainer from './components/youtubeSearch/YoutubeSearchContainer';
+import YoutubeVideoContainer from './components/youtubeVideoContainer/YoutubeVideoContainer';
 import FavoritesList from './components/favoritesList/FavoritesList';
 import GoogleBtn from './components/googleButton/GoogleBtn';
-import Title from './components/title/Title.jsx'
 import LinkInput from './components/LinkInput/LinkInput';
 import Footer from './components/footer/Footer';
 
@@ -49,9 +48,6 @@ const App = (props) =>{
   },[user])
 
  
-
- 
-
   const hubClassSelector = () => {
       let length = videoLinks.length
     if (length === 0) {
@@ -67,7 +63,7 @@ const App = (props) =>{
     
  <GoogleBtn dispatch = {dispatch} loggedIn ={user=== '' ? false:true} user = {user} setUser = {setUser}/>
  <LinkInput addToPlayer = {addToPlayer}/>
- <Title/>
+ <div className="title">VIDHUB</div>
   
  <YoutubeVideoContainer user = {user}/>
  <div className = { `${hubClassSelector()}`}>

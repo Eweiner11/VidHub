@@ -1,9 +1,7 @@
 import React from 'react'
 import {useSelector } from 'react-redux';
 import ResponsivePlayer from './ResponsivePlayer';
-
-
-function YoutubeVideoContainer({user}) {
+const YoutubeVideoContainer = ({user}) => {
 
  const youtubeLinks = useSelector(state => state.videoPlayerLinks)
 

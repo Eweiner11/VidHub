@@ -25,7 +25,7 @@ module.exports = {
       });
     },
     addFavorite: ({ userId, link,name }) => {
-      let addFavoriteQuery = `insert into favorites (UserId, link, name) values(${userId},"${link}","${name}")`;
+      let addFavoriteQuery = `insert into Favorites (UserId, link, name) values(${userId},"${link}","${name}")`;
       connection.query(addFavoriteQuery, (err, result) => {
         if (err) {
           throw err;
@@ -36,7 +36,7 @@ module.exports = {
     },
     getFavorites: (userName, callback) => {
       
-      let getFavoritesQuery = `select link,name from favorites WHERE userId = (select id from Users WHERE userName = "${userName}")`;
+      let getFavoritesQuery = `select link,name from Favorites WHERE userId = (select id from Users WHERE userName = "${userName}")`;
       connection.query(getFavoritesQuery, (err, results) => {
         if (err) {
           throw err;
@@ -47,7 +47,7 @@ module.exports = {
       });
     },
     removeFavorite: (link) => {
-      let removeFavoriteQuery = `delete from favorites where link = "${link}"`;
+      let removeFavoriteQuery = `delete from Favorites where link = "${link}"`;
       connection.query(removeFavoriteQuery, (err, results) => {
         if (err) {
           throw err;
