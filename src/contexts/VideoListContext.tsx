@@ -1,24 +1,43 @@
 import { createContext, useContext, useState, ReactNode, ReactElement } from 'react';
 
 interface VideoContextState {
-    videos: string[];
+    videos: (string)[];
     setVideos: React.Dispatch<React.SetStateAction<string[]>>;
     removeVideo: (index: number) => void;
     addVideo: (video: string) => void;
     isFullScreen:boolean;
     toggleFullScreen:() => void;
+    changeVolume:(num:number,idx:number)=>void;
+    volumes:number[];
 }
 
 interface VideoProviderProps {
     children: ReactNode;
 }
+interface Video {
+    url: string ;
+    volume: number;
+  }
 
 export const VideoContext = createContext<VideoContextState | undefined>(undefined);
 
 export const VideoProvider = ({ children }: VideoProviderProps): ReactElement => {
-    const [videos, setVideos] = useState<string[]>(['https://www.youtube.com/watch?v=lV1OOlGwExM','https://www.youtube.com/watch?v=lV1OOlGwExM']);
+    const [videos, setVideos] = useState<(string)[]>(['https://www.youtube.com/watch?v=qTK7MbOgrTI','https://www.youtube.com/watch?v=WNcsUNKlAKw','https://www.youtube.com/watch?v=bgJLEOld59E']);
     const [isFullScreen,setFullScreen] = useState(false)
+    const [volumes,setVolumes] = useState<number[]>([0,0,0,0])
 
+
+    const changeVolume = (num:number,idx:number) =>{
+        const copy = volumes.slice()
+        copy[idx] = num
+        setVolumes(copy)
+    }
+    // const swapVideos = (index1: number, index2: number) => {
+    //     const newVideos = [...videos];
+    //     [newVideos[index1], newVideos[index2]] = [newVideos[index2], newVideos[index1]];
+    //     setVideos(newVideos);
+    //   };
+      
     const removeVideo = (index: number) => {
         setVideos((currentVideos) => currentVideos.filter((_, i) => i !== index));
     };
@@ -43,7 +62,9 @@ export const VideoProvider = ({ children }: VideoProviderProps): ReactElement =>
         removeVideo,
         addVideo,
         isFullScreen,
-        toggleFullScreen
+        toggleFullScreen,
+        changeVolume,
+        volumes
     };
 
     return (
